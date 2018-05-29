@@ -1,6 +1,9 @@
-# Album Showcase
+# Euskal Herriko puntu interesgarriak (POI)
 
-Music albums artwork showcase built in ReactJS. Displays artwork covers in different case formats. 
+## Authors
+ - [hasier-inan](https://github.com/hasier-inan)
+ - [superandoni](https://github.com/superandoni)
+ - [pekhines](https://github.com/pekhines)
 
 ## Usage
 
@@ -11,13 +14,9 @@ TODO
 
 ## Testing the component
 
+build with
 ```
 npm run build
-```
-
-```
-npm run test
-npm run lint
 ```
 
 preview it with
