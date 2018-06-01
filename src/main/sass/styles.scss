@@ -1,5 +1,15 @@
 $error-color: #ff3b00;
-$header-border-color: rgba(0, 0, 0, .125);
-$header-color: rgba(0, 0, 0, .03);
+$font-color: #cdcdcd;
+$background-menu-color: #303030;
+$background-color: rgba(0, 0, 0, .75);
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,700,800);
+@import "burguer-menu";
 
 @import "~bootstrap/scss/bootstrap";
+
+body {
+  background: $background-color;
+  color: $font-color;
+  font-family: 'Raleway', Arial, sans-serif;
+}

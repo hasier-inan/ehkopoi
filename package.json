@@ -10,6 +10,7 @@
     "popper.js": "^1.12.3",
     "prop-types": "^15.6.1",
     "react": "^16.4.0",
+    "react-burger-menu": "^2.4.4",
     "react-dom": "^16.4.0",
     "react-google-maps": "^9.4.5",
     "reactstrap": "^6.0.1",
