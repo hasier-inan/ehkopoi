@@ -1,13 +1,8 @@
 import { slide as BurguerMenu } from 'react-burger-menu'
 
 const React = require('react');
-const ReactDOM = require('react-dom');
 
 class MenuDefinition extends React.Component {
-
-  constructor(props) {
-    super(props);
-  }
 
   showSettings (event) {
     event.preventDefault();

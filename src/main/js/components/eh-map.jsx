@@ -1,4 +1,4 @@
-import {compose, withProps} from "recompose";
+import {compose} from "recompose";
 import ReactWindowResizeListener from 'window-resize-listener-react';
 
 import {

@@ -3,7 +3,7 @@ module.exports = {
     loaders: []
   },
   resolve: {
-    extensions: ['', '.js', '.jsx', '.json', '.scss', '.css', '.md']
+    extensions: ['.js', '.jsx', '.json', '.scss', '.css', '.md']
   },
   externals: {
     'react/addons': true,

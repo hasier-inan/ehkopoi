@@ -10,9 +10,8 @@ module.exports = {
   },
   devtool: 'sourcemaps',
   cache: true,
-  debug: true,
   output: {
-    path: './built/',
+    path:  __dirname + '/src/built/',
     filename: '[name].js'
   },
   module: {
@@ -20,7 +19,7 @@ module.exports = {
       {
         test: path.join(__dirname, '.'),
         exclude: /(node_modules)/,
-        loader: 'babel',
+        loader: 'babel-loader',
         query: {
           cacheDirectory: true,
           presets: ['es2015', 'react']
@@ -30,9 +29,9 @@ module.exports = {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract('css!postcss-loader!sass?includePaths[]=./node_modules')
       }, {
-        test: /\.jsx?$/,         // Match both .js and .jsx files
+        test: /\.jsx?$/,
         exclude: [/node_modules/, /built/],
-        loader: "babel",
+        loader: "babel-loader",
         query:
           {
             presets:['react']
@@ -40,9 +39,8 @@ module.exports = {
       }
     ]
   },
-  postcss: [autoPrefixer({browsers: ['last 10 versions']})],
   resolve: {
-    extensions: ['', '.js', '.jsx', '.json', '.scss', '.css', '.md']
+    extensions: ['.js', '.jsx', '.json', '.scss', '.css', '.md']
   },
   stats: {
     colors: true
@@ -58,9 +56,5 @@ module.exports = {
       cssProcessorOptions: {discardComments: {removeAll: true}},
       canPrint: true
     })
-  ],
-  sassLoader: {
-    outputStyle: 'compressed',
-    includePaths: ['node_modules']
-  }
+  ]
 };
