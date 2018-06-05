@@ -83,7 +83,18 @@
 
 .bm-item-list a,
 .bm-item-list div{
-    padding: .8em
+    padding: .8em;
+    cursor: pointer;
+}
+
+.bm-item-list a:hover,
+.bm-item-list div:hover{
+    color: #5a5a5a;
+}
+
+.bm-item-list a.active,
+.bm-item-list div.active{
+    color: #b21f2d;
 }
 
 .bm-item-list a span {
