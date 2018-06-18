@@ -6,13 +6,13 @@ import {
   withScriptjs,
   withGoogleMap,
   GoogleMap,
-  Marker
+  Marker,
+  InfoWindow
 } from "react-google-maps";
 
 const React = require('react');
 
-//TODO: add gitcrypt
-const mapsKey = 'xxx';
+const mapsKey = 'AIzaSyDB7dACNMwk75dB_XYPDFHh_SF0n8ZRPjs';
 
 const EhGoogleMap = compose(
   withScriptjs,
@@ -30,16 +30,34 @@ class EhMap extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {height: window.innerHeight};
+    this.state = {height: window.innerHeight, infoBox: {}};
   }
 
-  markerSelected(marker) {
-    //TODO: Add listener to display info
+  markerSelected(key) {
+    this.setState({
+      infoBox: {isOpen: true, index: key}
+    });
   }
 
   buildMarkers() {
-    return this.props.data.map((element, index)=>{
-      return <Marker key={index} position={{lat: parseFloat(element.latwgs84), lng: parseFloat(element.lonwgs84)}} onClick={(marker) => this.markerSelected()}/>
+    return this.props.data.map((element, index) => {
+      return <Marker key={index}
+                     icon={this.props.icon}
+                     position={{lat: parseFloat(element.latwgs84), lng: parseFloat(element.lonwgs84)}}
+                     onClick={() => this.markerSelected(index)}>
+        {
+          this.state.infoBox.isOpen && this.state.infoBox.index === index &&
+          <InfoWindow onCloseClick={() => console.log('close me')}>
+            <div className="text-center w-100">{element.documentName}
+              <div className="w-50 d-inline-block">
+                <object data={this.props.icon} type="image/svg+xml">
+                </object>
+              </div>
+              <div className="w-50 d-inline-block">tbd</div>
+            </div>
+          </InfoWindow>
+        }
+      </Marker>
     });
   }
 
@@ -60,6 +78,7 @@ class EhMap extends React.Component {
   }
 }
 EhMap.propTypes = {
-  data: PropTypes.array.isRequired
+  data: PropTypes.array.isRequired,
+  icon: PropTypes.string
 };
 export default EhMap;

@@ -3,10 +3,15 @@ import 'jquery';
 import EhMap from "./components/eh-map";
 import MenuDefinition from "./components/menu-definition";
 import accommodation from './data/alojamientos.json';
+import accommodationIco from './data/alojamientos.svg';
 import campings from './data/campings.json';
+import campingsIco from './data/campings.svg';
 import culture from './data/patrimonios.json';
+import cultureIco from './data/patrimonios.svg';
 import beaches from './data/playas.json';
+import beachesIco from './data/playas.svg';
 import restaurants from './data/restaurantes.json';
+import restaurantsIco from './data/restaurantes.svg';
 
 
 require("../sass/styles.scss");
@@ -23,31 +28,31 @@ class EhkoPoi extends React.Component {
         {
           key: 'Alojamientos',
           onSelect: () => {
-            this.setState({data: accommodation, isOpen:false})
+            this.setState({data: accommodation, isOpen: false, icon: accommodationIco})
           }
         },
         {
           key: 'Campings',
           onSelect: () => {
-            this.setState({data: campings, isOpen:false})
+            this.setState({data: campings, isOpen: false, icon: campingsIco})
           }
         },
         {
           key: 'Restaurantes',
           onSelect: () => {
-            this.setState({data: restaurants, isOpen:false})
+            this.setState({data: restaurants, isOpen: false, icon: restaurantsIco})
           }
         },
         {
           key: 'Patrimonios culturales',
           onSelect: () => {
-            this.setState({data: culture, isOpen:false})
+            this.setState({data: culture, isOpen: false, icon: cultureIco})
           }
         },
         {
           key: 'Playas',
           onSelect: () => {
-            this.setState({data: beaches, isOpen:false})
+            this.setState({data: beaches, isOpen: false, icon: beachesIco})
           }
         }
       ]
@@ -58,7 +63,7 @@ class EhkoPoi extends React.Component {
     return (
       <div>
         <MenuDefinition items={this.state.items} isOpen={false}/>
-        <EhMap data={this.state.data}/>
+        <EhMap data={this.state.data} icon={this.state.icon}/>
       </div>
     )
   }
