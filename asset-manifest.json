@@ -1,7 +1,12 @@
 {
   "main.css": "static/css/main.d530a626.css",
   "main.css.map": "static/css/main.d530a626.css.map",
-  "main.js": "static/js/main.3b71dc3a.js",
-  "main.js.map": "static/js/main.3b71dc3a.js.map",
+  "main.js": "static/js/main.36fbabcd.js",
+  "main.js.map": "static/js/main.36fbabcd.js.map",
+  "static/media/alojamientos.svg": "static/media/alojamientos.c19a5477.svg",
+  "static/media/campings.svg": "static/media/campings.a1c87b9a.svg",
+  "static/media/patrimonios.svg": "static/media/patrimonios.228d6f29.svg",
+  "static/media/playas.svg": "static/media/playas.0c4d7fb2.svg",
+  "static/media/restaurantes.svg": "static/media/restaurantes.c018cb84.svg",
   "static/media/styles.scss": "static/media/styles.92b89120.scss"
 }
